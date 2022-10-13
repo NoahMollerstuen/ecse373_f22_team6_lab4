@@ -1,0 +1,3 @@
+<launch>
+  <node name="publisher" type="stdr_publisher_node" pkg="stdr_publisher" />
+</launch>
