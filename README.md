@@ -8,7 +8,7 @@ ECSE 373
 
 ---
 
-This project is for learning and implementing rosbag.
+This project is for learning and implementing stdr.
 
 ## `launch` files
 
