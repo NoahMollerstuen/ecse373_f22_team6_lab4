@@ -1,0 +1,5 @@
+<launch>
+  <include file="$(find collision_avoidance)/launch/launch_node.launch" pass_all_args="true"/>
+  <include file="$(find stdr_launchers)/launch/server_with_map_and_gui.launch"/>
+  <node name="rqt_gui" type="rqt_gui" pkg="rqt_gui" required="true" args="-s rqt_robot_steering.robot_steering.RobotSteering"/>
+</launch>
