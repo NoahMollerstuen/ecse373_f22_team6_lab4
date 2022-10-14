@@ -6,7 +6,6 @@
 #include <sstream>
 
 ros::Publisher *p_pub;
-sensor_msgs::LaserScan currentLaserMsg;
 float global_min;
 geometry_msgs::Twist des_vel;
 geometry_msgs::Twist cmd_vel;
@@ -18,20 +17,19 @@ void desiredVelCallback(const geometry_msgs::Twist::ConstPtr& msg)
 
 void laserScanCallback(const sensor_msgs::LaserScan::ConstPtr& msg)
 {
-  currentLaserMsg = *msg;
   float min = 4.0;
   float max = 0.0;
   int maxindex;
 
   for (int i=0; i<20; i++)
   {
-    if (min > currentLaserMsg.ranges[125 + i])
+    if (min > msg->ranges[125 + i])
     {
-      min = currentLaserMsg.ranges[125 + i];
+      min = msg->ranges[125 + i];
     }
-    if (max < currentLaserMsg.ranges[125 + i])
+    if (max < msg->ranges[125 + i])
     {
-      max = currentLaserMsg.ranges[125 + i];
+      max = msg->ranges[125 + i];
       maxindex = i;
     }
   }
