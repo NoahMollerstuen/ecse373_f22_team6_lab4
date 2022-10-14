@@ -1,5 +1,8 @@
 <launch>
   <arg name="ns" default="robot0" />
+
   <include file="$(find stdr_launchers)/launch/server_with_map_and_gui.launch" />
+  <node name="rqt_gui" type="rqt_gui" pkg="rqt_gui" />
+
   <include file="$(find stdr_publisher)/launch/first.launch" ns="$(arg ns)" />
 </launch>
