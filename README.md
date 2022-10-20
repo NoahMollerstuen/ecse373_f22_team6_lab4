@@ -1,6 +1,6 @@
 # Laboratory 4
 
-Team 4  
+Team 6  
 Seongmin Jung  
 Professor Lee  
 ECSE 373  
